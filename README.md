@@ -31,7 +31,7 @@ References：[STAR: ultrafast universal RNA-seq aligner](https://pubmed.ncbi.nlm
 Mapping post-trimming reads to reference genomes using STAR, `genomeDir` is the location of the constructed reference genome index. `readFilesIn` is input files (post-trimming reads). `readFilesCommand gunzip -c` indicates that the input file is a gz compressed file. `outSAMtype BAM SortedByCoordinate` output sorted by coordinate Aligned.sortedByCoord.out.bam file. `quantMode TranscriptomeSAM` output SAM/BAM alignments to transcriptome into a separate file
 
 ```
-STAR --runThreadN 8 --genomeDir /media/ohtanlab/3ec63b8d-e640-41c8-96d2-6de634743b30/sefan/reference_file/gencode/rsem_index --readFilesIn ./${FileName}/trim_galore_result/${FileName}_R1_001_val_1.fq.gz ./${FileName}/trim_galore_result/${FileName}_R2_001_val_2.fq.gz --readFilesCommand gunzip -c --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ./${FileName}/star_result/${FileName}_ --quantMode TranscriptomeSAM --outSAMattributes All ;
+STAR --runThreadN 8 --genomeDir /media/ohtanlab/sefan/reference_file/gencode/rsem_index --readFilesIn ./${FileName}/trim_galore_result/${FileName}_R1_001_val_1.fq.gz ./${FileName}/trim_galore_result/${FileName}_R2_001_val_2.fq.gz --readFilesCommand gunzip -c --outSAMtype BAM SortedByCoordinate --outFileNamePrefix ./${FileName}/star_result/${FileName}_ --quantMode TranscriptomeSAM --outSAMattributes All ;
 ```
 
 Step4: Quantification
@@ -41,7 +41,7 @@ Tool: [RSEM](https://github.com/deweylab/RSEM)
 References：[RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome](https://pubmed.ncbi.nlm.nih.gov/21816040/)
 
 ```
-rsem-calculate-expression --bam --paired-end --no-bam-output -p 8 --strand-specific ./${FileName}/star_result/${FileName}_Aligned.toTranscriptome.out.bam /media/ohtanlab/3ec63b8d-e640-41c8-96d2-6de634743b30/sefan/reference_file/gencode/rsem_index/gencode_v30 ./${FileName}/rsem_result/${FileName}
+rsem-calculate-expression --bam --paired-end --no-bam-output -p 8 --strand-specific ./${FileName}/star_result/${FileName}_Aligned.toTranscriptome.out.bam /media/ohtanlab/sefan/reference_file/gencode/rsem_index/gencode_v30 ./${FileName}/rsem_result/${FileName}
 ```
 
 
