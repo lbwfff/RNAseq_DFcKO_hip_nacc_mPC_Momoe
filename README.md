@@ -2,7 +2,7 @@ RNAseq pepline for DFcKO_hip_nacc_mPC_Momoe
 =============================================
 
 Step 1: Format Conversion
-Tool: fastq-dump
+Tool: [fastq-dump](https://github.com/ncbi/sra-tools)
 ```
 fastq-dump ${FileName}.sra --gzip &&
 mv ${FileName}_R1_001.fastq.gz ./${FileName} &&
