@@ -1,1 +1,4 @@
-# RNAseq_DFcKO_hip_nacc_mPC_Momoe
+RNAseq pepline for DFcKO_hip_nacc_mPC_Momoe
+=============================================
+
+
