@@ -34,11 +34,16 @@ STAR --runThreadN 8 --genomeDir /media/ohtanlab/sefan/reference_file/gencode/rse
 ```
 
 Step4: Quantification
+----------------------
 
 Tool: [RSEM](https://github.com/deweylab/RSEM). References：[RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome](https://pubmed.ncbi.nlm.nih.gov/21816040/)
 
 ```
 rsem-calculate-expression --bam --paired-end --no-bam-output -p 8 --strand-specific ./${FileName}/star_result/${FileName}_Aligned.toTranscriptome.out.bam /media/ohtanlab/sefan/reference_file/gencode/rsem_index/gencode_v30 ./${FileName}/rsem_result/${FileName}
 ```
+
+Step5: Differential gene expression analysis
+----------------------
+Tool: [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html). References:[Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2](https://pubmed.ncbi.nlm.nih.gov/25516281/)
 
 
