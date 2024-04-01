@@ -1,4 +1,4 @@
-RNAseq pepline for DFcKO_hip_nacc_mPC_Momoe
+RNAseq workflow for DFcKO_hip_nacc_mPC_Momoe
 =============================================
 
 Step 1: Format Conversion
